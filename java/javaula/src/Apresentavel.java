@@ -1,0 +1,3 @@
+interface Apresentavel {
+    void apresentar();
+}
