@@ -11,13 +11,18 @@ import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import org.springframework.stereotype.Repository;
+
+@Repository
 
 public class PessoaDAO implements AutoCloseable {
 
     private final Connection conexao;
 
-    public PessoaDAO(String nomeBanco) {
+    public PessoaDAO() {
         try {
+            String nomeBanco = "pessoas";
+            
             Path currentRelativaPath = Paths.get("");
             String projectPath = currentRelativaPath.toAbsolutePath().toString();
 
